@@ -1,0 +1,2 @@
+Links I used:
+[I looked up how to hold scripts in another file but call them in the html file](https://www.google.com/search?q=can+I+call+scripts+from+another+html+file+into+another+html+file&rlz=1C1SJWC_enUS1074US1074&oq=can+I+call+scripts+from+another+html+file+into+another+html+file&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTEyNjkzajBqN6gCCLACAfEFsIeCMUWbkRM&sourceid=chrome&ie=UTF-8&safe=active&ssui=on)
