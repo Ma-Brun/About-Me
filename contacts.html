@@ -5,20 +5,40 @@
     <title>Contact</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Cyrus Brun</h1>
-        </div>
-    </nav>
+<body class="contacts-page intro-active">
+    <div class="contacts-intro-title" aria-hidden="true">Cyrus Brun - Contacts</div>
 
-    <main></main>
+    <main>
+        <section class="contact-section">
+            <div class="container">
+                <div class="popup-button-row">
+                    <button class="popup-trigger" data-title="Email Contact" 
+                    data-message="<li> School Email: <a href='mailto:cyrus_brun27@milton.edu'>cyrus_brun27@milton.edu</a></li> 
+                    <li>School Github: <a href='https://github.com/Ma-Brun?tab=repositories'>Ma-Brun</a></li>">School Related</button>
+                    <button class="popup-trigger" data-title="Phone Contact" data-message="<li>Personal Email: <a href='mailto:cyrus.brun2008@gmail.com'>cyrus.brun2008@gmail.com</a></li>
+                    <li>
+                        Personal Phone Number: <a href='tel:917-979-0517'>917-979-0517</a>
+                    </li>
+                    <button onclick='copyPhoneNumber()'>Copy Number</button>">Contact Me Personally</button>
+                    
+                    <button class="popup-trigger" data-title="GitHub Contact" data-message="Check out my GitHub profile for projects and repositories.">Personal Projects</button>
+                </div>
+
+                <div class="popup-container" id="popup">
+                    <div class="popup-content">
+                        <h2 id="popup-title">Manual Popup</h2>
+                        <p id="popup-message">This popup uses custom CSS and JavaScript.</p>
+                        <button onclick="closePopup()">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <ul id="footer-links" class="nav-links"></ul>
         <p>&copy; 2026 Cyrus Brun. All rights reserved.</p>
     </footer>
-
     <script src="scripts.js"></script>
 </body>
 </html>
