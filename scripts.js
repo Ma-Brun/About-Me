@@ -1,45 +1,18 @@
 const links = [
-    { href: '#home', text: 'Home' },
-    { href: '#skills', text: 'Skills' },
-    { href: '#projects', text: 'Projects' },
-    { href: '#contact', text: 'Contact' }
+    { href: 'home_page.html', text: 'Home' },
+    { href: 'skills.html', text: 'Skills' },
+    { href: 'projects.html', text: 'Projects' },
+    { href: 'contacts.html', text: 'Contacts' },
+    { href: 'learn_more.html', text: 'Learn More' }
 ];
 
-function renderLinks(targetSelector, excludeCurrent = true) {
-    const currentSection = window.location.hash || '#home';
-    const list = document.querySelector(targetSelector);
+const currentPage = window.location.pathname.split('/').pop() || 'home_page.html';
+const footerList = document.querySelector('#footer-links');
 
-    if (!list) {
-        return;
-    }
-
-    list.innerHTML = '';
-
-    links.forEach(link => {
-        if (!excludeCurrent || link.href !== currentSection) {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.href;
-            a.textContent = link.text;
-            li.appendChild(a);
-            list.appendChild(li);
-        }
-    });
+if (footerList) {
+    footerList.innerHTML = links
+        .filter(link => link.href !== currentPage)
+        .filter(link => !(currentPage === 'home_page.html' && link.href === 'learn_more.html'))
+        .map(link => `<li><a href="${link.href}">${link.text}</a></li>`)
+        .join('');
 }
-
-function renderFooterLinks() {
-    renderLinks('#footer-links', true);
-}
-
-function initPageScripts() {
-    renderFooterLinks();
-}
-
-window.addEventListener('DOMContentLoaded', initPageScripts);
-window.addEventListener('hashchange', renderFooterLinks);
-
-window.siteScripts = {
-    renderLinks,
-    renderFooterLinks,
-    initPageScripts
-};
