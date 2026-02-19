@@ -17,7 +17,7 @@ if (footerList) {
         .join('');
 }
 
-if (document.body.classList.contains('contacts-page')) {
+if (document.body.classList.contains('intro-page')) {
     window.addEventListener('load', () => {
         requestAnimationFrame(() => {
             document.body.classList.add('intro-finished');

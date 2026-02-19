@@ -2,15 +2,19 @@ nav {
   text-align: center;
 }
 
-.contacts-page {
+.intro-page {
   margin: 0;
 }
 
-.contacts-page.intro-active {
+.intro-page.intro-active {
   overflow: hidden;
 }
 
-.contacts-intro-title {
+.intro-page .logo {
+  opacity: 0;
+}
+
+.page-intro-title {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -22,28 +26,28 @@ nav {
   opacity: 1;
   z-index: 1200;
   pointer-events: none;
-  transition: top 2s ease, transform 2s ease, opacity 0.4s ease;
+  transition: top 1.5s ease, transform 1.5s ease, opacity 0.4s ease;
 }
 
-.contacts-page main,
-.contacts-page footer {
+.intro-page main,
+.intro-page footer {
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.contacts-page main {
+.intro-page main {
   padding-top: 56px;
 }
 
-.contacts-page.intro-finished .contacts-intro-title {
+.intro-page.intro-finished .page-intro-title {
   top: 28px;
   transform: translate(-50%, -50%) scale(0.48);
   opacity: 1;
 }
 
-.contacts-page.intro-finished main,
-.contacts-page.intro-finished footer {
+.intro-page.intro-finished main,
+.intro-page.intro-finished footer {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.85s;
@@ -78,6 +82,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 3000;
   background-color: rgba(0, 0, 0, 0.25);
   justify-content: center;
   align-items: center;
@@ -110,4 +115,68 @@ nav {
 .show-popup .popup-content {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.content h1 {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.content p,
+.content p1 {
+  display: block;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Skills grid: two rows of three headers with editable textboxes */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 28px auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  align-items: start;
+}
+
+.skill-card {
+  background: #fafafa;
+  border: 1px solid #ececec;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.skill-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.skill-text {
+  min-height: 88px;
+  border-radius: 6px;
+  border: 1px dashed #e6e6e6;
+  background: transparent;
+  padding: 10px;
+}
+
+@media (max-width: 900px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+  .skills-grid { grid-template-columns: 1fr; }
 }

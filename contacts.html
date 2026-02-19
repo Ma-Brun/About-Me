@@ -5,8 +5,8 @@
     <title>Contact</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="contacts-page intro-active">
-    <div class="contacts-intro-title" aria-hidden="true">Cyrus Brun - Contacts</div>
+<body class="intro-page intro-active">
+    <div class="page-intro-title" aria-hidden="true">Cyrus Brun - Contacts</div>
 
     <main>
         <section class="contact-section">
@@ -24,16 +24,17 @@
                     <button class="popup-trigger" data-title="GitHub Contact" data-message="Check out my GitHub profile for projects and repositories.">Personal Projects</button>
                 </div>
 
-                <div class="popup-container" id="popup">
-                    <div class="popup-content">
-                        <h2 id="popup-title">Manual Popup</h2>
-                        <p id="popup-message">This popup uses custom CSS and JavaScript.</p>
-                        <button onclick="closePopup()">Okay</button>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
+
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <h2 id="popup-title">Manual Popup</h2>
+            <p id="popup-message">This popup uses custom CSS and JavaScript.</p>
+            <button onclick="closePopup()">Okay</button>
+        </div>
+    </div>
 
     <footer>
         <ul id="footer-links" class="nav-links"></ul>
