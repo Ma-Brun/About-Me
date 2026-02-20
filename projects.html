@@ -5,16 +5,24 @@
     <title>Projects</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="intro-page intro-active">
+<body class="intro-page intro-active projects-page">
     <div class="page-intro-title" aria-hidden="true">Cyrus Brun - Projects</div>
 
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">Cyrus Brun</h1>
-        </div>
-    </nav>
+    <main>
+        <section class="projects-section">
+            <div class="projects-container">
+                <button class="popup-trigger projects-button" data-title="Projects" data-message="nothing to see here yet">View Projects</button>
+            </div>
+        </section>
+    </main>
 
-    <main></main>
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <h2 id="popup-title">Projects</h2>
+            <p id="popup-message">nothing to see here yet</p>
+            <button onclick="closePopup()">Okay</button>
+        </div>
+    </div>
 
     <footer>
         <ul id="footer-links" class="nav-links"></ul>

@@ -75,6 +75,26 @@ nav {
   line-height: 1.2;
 }
 
+.projects-page main {
+  min-height: calc(100vh - 130px);
+  display: grid;
+  place-items: center;
+  padding-top: 0;
+}
+
+.projects-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-button {
+  width: min(460px, calc(100% - 48px));
+  min-height: 140px;
+  font-size: 1.8rem;
+  border-radius: 12px;
+}
+
 .popup-container {
   display: flex;
   position: fixed;
@@ -180,3 +200,12 @@ nav {
 @media (max-width: 520px) {
   .skills-grid { grid-template-columns: 1fr; }
 }
+
+button {
+  transition: filter 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(0.85);
+}
+
