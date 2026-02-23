@@ -10,10 +10,24 @@ const currentPage = window.location.pathname.split('/').pop() || 'home_page.html
 const footerList = document.querySelector('#footer-links');
 
 if (footerList) {
-    footerList.innerHTML = links
+    let footerLinks = links
         .filter(link => link.href !== currentPage)
-        .filter(link => !(currentPage === 'home_page.html' && link.href === 'learn_more.html'))
-        .map(link => `<li><a href="${link.href}">${link.text}</a></li>`)
+        .filter(link => !(currentPage === 'home_page.html' && link.href === 'learn_more.html'));
+
+    if (footerLinks.length === 4) {
+        const homeLink = footerLinks.find(link => link.href === 'home_page.html');
+        if (homeLink) {
+            footerLinks = footerLinks.filter(link => link.href !== 'home_page.html');
+            footerLinks.push(homeLink);
+        }
+    }
+
+    footerList.innerHTML = footerLinks
+        .map(link => {
+            const isFullWidthHome = footerLinks.length === 4 && link.href === 'home_page.html';
+            const homeClass = isFullWidthHome ? ' class="footer-home-full"' : '';
+            return `<li${homeClass}><a href="${link.href}">${link.text}</a></li>`;
+        })
         .join('');
 }
 
@@ -40,7 +54,7 @@ function copyPhoneNumber() {
     }).catch(err => {
         console.error("Failed to copy phone number: ", err);
     });
-}
+} //my favorite button I made because it has a fun little animation and is actually useful for people who want to contact me
 
 const popup = document.getElementById('popup');
 const popupTitle = document.getElementById('popup-title');

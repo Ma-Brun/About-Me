@@ -43,7 +43,6 @@ nav {
 .intro-page.intro-finished .page-intro-title {
   top: 28px;
   transform: translate(-50%, -50%) scale(0.48);
-  opacity: 1;
 }
 
 .intro-page.intro-finished main,
@@ -155,7 +154,6 @@ nav {
   margin: 0;
 }
 
-/* Skills grid: two rows of three headers with editable textboxes */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -168,11 +166,11 @@ nav {
 }
 
 .skill-card {
-  background: #fafafa;
-  border: 1px solid #ececec;
+  background: #dddddd;
+  border: 1px solid #000000;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -188,17 +186,67 @@ nav {
 .skill-text {
   min-height: 88px;
   border-radius: 6px;
-  border: 1px dashed #e6e6e6;
+  border: 1px dashed #000000;
   background: transparent;
   padding: 10px;
 }
 
+footer {
+  padding: 24px 0;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 24px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.nav-links li {
+  min-width: 0;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 104px;
+  padding: 14px 16px;
+  border-radius: 5px;
+  border: 1px solid #e4e4e4;
+  background: #e4e4e4;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  box-sizing: border-box;
+  transition: filter 0.2s ease;
+}
+
+.nav-links a:hover {
+  filter: brightness(0.85);
+}
+
+.nav-links .footer-home-full {
+  grid-column: 1 / -1;
+}
+
 @media (max-width: 900px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 520px) {
   .skills-grid { grid-template-columns: 1fr; }
+  .nav-links { grid-template-columns: 1fr; }
 }
 
 button {
@@ -207,5 +255,4 @@ button {
 
 button:hover {
   filter: brightness(0.85);
-}
-
+} /* this logic just darkens buttons when hoevered, but only if they don't have a custom hover style already (like the nav links) */
