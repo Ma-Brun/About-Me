@@ -154,6 +154,22 @@ nav {
   margin: 0;
 }
 
+.learn-more-photo-box {
+  margin: 24px auto 0;
+  max-width: 560px;
+  border: 3px solid #4f4f4f;
+  border-radius: 14px;
+  padding: 10px;
+  background: #f7f7f7;
+}
+
+.learn-more-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
